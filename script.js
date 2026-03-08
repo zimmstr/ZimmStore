@@ -4,17 +4,9 @@ setTimeout(()=>{
 
 document.getElementById("loader").style.display="none"
 
-},5000)
+},3000)
 
 })
-
-
-const darkToggle=document.getElementById("darkToggle")
-
-darkToggle.onclick=()=>{
-document.body.classList.toggle("light")
-}
-
 
 
 let faqBtn=document.querySelectorAll(".faqBtn")
@@ -34,7 +26,6 @@ text.style.display==="block"
 })
 
 
-
 let topBtn=document.getElementById("topBtn")
 
 window.onscroll=()=>{
@@ -50,3 +41,41 @@ topBtn.style.display="none"
 topBtn.onclick=()=>{
 window.scrollTo({top:0,behavior:"smooth"})
 }
+
+
+
+let imgs=document.querySelectorAll(".zoom")
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+
+imgs.forEach(img=>{
+
+img.onclick=()=>{
+
+modal.style.display="flex"
+modalImg.src=img.src
+
+}
+
+})
+
+modal.onclick=()=>{
+modal.style.display="none"
+}
+
+
+
+let buys=document.querySelectorAll(".buy")
+let buyer=document.getElementById("buyer")
+let count=20
+
+buys.forEach(btn=>{
+
+btn.onclick=()=>{
+
+count++
+buyer.innerHTML=count+"+<br>Pembeli"
+
+}
+
+})

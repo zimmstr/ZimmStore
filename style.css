@@ -5,6 +5,7 @@ background:#0a0a0a;
 color:white;
 }
 
+
 #loader{
 position:fixed;
 top:0;
@@ -19,18 +20,16 @@ align-items:center;
 z-index:9999;
 }
 
+
 .loader-logo{
 width:120px;
 margin-bottom:40px;
+border-radius:50%;
 }
 
-.loading-container{
-width:260px;
-position:relative;
-}
 
 .loading-bar{
-width:100%;
+width:200px;
 height:8px;
 background:#333;
 border-radius:10px;
@@ -41,18 +40,7 @@ overflow:hidden;
 height:100%;
 width:0%;
 background:#0f6fff;
-animation:loadbar 5s linear forwards;
-}
-
-.car{
-position:absolute;
-top:-28px;
-left:-40px;
-animation:drive 5s linear forwards;
-}
-
-.car img{
-width:40px;
+animation:loadbar 3s linear forwards;
 }
 
 @keyframes loadbar{
@@ -60,29 +48,23 @@ from{width:0%;}
 to{width:100%;}
 }
 
-@keyframes drive{
-from{left:-40px;}
-to{left:260px;}
-}
 
-header{
+nav{
 display:flex;
-justify-content:space-between;
-padding:15px 30px;
+justify-content:center;
+gap:20px;
+padding:15px;
 background:#0b1f3a;
 position:sticky;
 top:0;
-}
-
-.logo img{
-height:40px;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:0 10px;
 text-decoration:none;
 }
+
 
 .hero{
 height:90vh;
@@ -99,31 +81,74 @@ padding:40px;
 border-radius:10px;
 }
 
+
 .btn{
 background:#0f6fff;
 padding:12px 20px;
 border-radius:8px;
 text-decoration:none;
 color:white;
+display:inline-block;
 }
+
+
+#produk{
+padding:40px 20px;
+text-align:center;
+}
+
 
 .grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-padding:30px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
+
 
 .card{
 background:#111;
 padding:15px;
-border-radius:10px;
+border-radius:12px;
+position:relative;
+transition:0.3s;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,0.5);
 }
 
 .card img{
 width:100%;
 border-radius:10px;
+transition:0.3s;
 }
+
+.card:hover img{
+transform:scale(1.05);
+}
+
+
+.badge{
+position:absolute;
+top:10px;
+left:10px;
+padding:4px 8px;
+font-size:12px;
+border-radius:6px;
+}
+
+.murah{
+background:#27ae60;
+}
+
+.mahal{
+background:#e74c3c;
+}
+
 
 .buy{
 display:block;
@@ -136,6 +161,19 @@ color:white;
 text-decoration:none;
 }
 
+
+#request{
+text-align:center;
+padding:60px;
+background:#111;
+}
+
+.slot{
+margin:20px;
+font-size:18px;
+}
+
+
 .cara-grid{
 display:grid;
 grid-template-columns:repeat(5,1fr);
@@ -143,12 +181,14 @@ padding:30px;
 text-align:center;
 }
 
+
 .stats{
 display:flex;
 justify-content:space-around;
 padding:40px;
 background:#111;
 }
+
 
 .faq{
 padding:30px;
@@ -169,11 +209,13 @@ padding:10px;
 background:#111;
 }
 
+
 footer{
 text-align:center;
 padding:30px;
 background:#0b1f3a;
 }
+
 
 #topBtn{
 display:none;
@@ -183,7 +225,20 @@ right:20px;
 padding:10px 15px;
 }
 
-.light{
-background:white;
-color:black;
+
+#imgModal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+#imgModal img{
+max-width:90%;
+max-height:90%;
 }
